@@ -4,7 +4,8 @@ import os
 
 def run_etl():
     # 1. Extract the CSV data
-    df = csv_file_path = 'products.csv'
+    df = pd.read_csv('products.csv', header=0)
+    print("Here is da head", df.head())
     
     # 2. Transform the data: uppercase the category column
     df['category'] = df['category'].str.upper()
@@ -13,7 +14,7 @@ def run_etl():
 
     host = "localhost"
     dbname = "demo-etl"
-    user = "postgres"
+    user = "ericspencer"
     password = "default"
     port = 5432
 
